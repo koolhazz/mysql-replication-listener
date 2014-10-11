@@ -114,7 +114,7 @@ static Parser url_parser[] = {
 };
 
 Binary_log_driver *
-mysql::system::create_transport(const char *url)
+mysql::system::create_transport(const char *url) /* 根据传入的参数判断连接的类型 */
 {
   const char *pfx = strchr(url, ':');
   if (pfx == 0)

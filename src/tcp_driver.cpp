@@ -53,17 +53,20 @@ static int encrypt_password(boost::uint8_t *reply,   /* buffer at least EVP_MAX_
                             const char *pass);
 static int hash_sha1(boost::uint8_t *output, ...);
 
-    int Binlog_tcp_driver::connect(const std::string& user, const std::string& passwd,
-                                   const std::string& host, long port,
-                                   const std::string& binlog_filename, size_t offset)
+int 
+Binlog_tcp_driver::connect(const std::string& user, 
+						   const std::string& passwd,
+                           const std::string& host, 
+						   long port,
+                           const std::string& binlog_filename, 
+						   size_t offset)
 {
   m_user=user;
   m_passwd=passwd;
   m_host=host;
   m_port=port;
 
-  if (!m_socket)
-  {
+  if (!m_socket) {
     if ((m_socket=sync_connect_and_authenticate(m_io_service, user, passwd, host, port)) == 0)
       return 1;
   }
@@ -88,7 +91,12 @@ static int hash_sha1(boost::uint8_t *output, ...);
   return 0;
 }
 
-tcp::socket *sync_connect_and_authenticate(boost::asio::io_service &io_service, const std::string &user, const std::string &passwd, const std::string &host, long port)
+tcp::socket*
+sync_connect_and_authenticate(boost::asio::io_service &io_service, 
+										  const std::string &user, 
+										  const std::string &passwd, 
+										  const std::string &host, 
+										  long port)
 {
 
   tcp::resolver resolver(io_service);

@@ -39,7 +39,7 @@ int proto_read_package_header(tcp::socket *socket, unsigned long *packet_length,
   {
     return 1;
   }
-  *packet_length=  (unsigned long)(buf[0] &0xFF);
+  *packet_length=  (unsigned long)(buf[0] &0xFF); // little ---> big endian
   *packet_length+= (unsigned long)((buf[1] &0xFF)<<8);
   *packet_length+= (unsigned long)((buf[2] &0xFF)<<16);
   *packet_no= (unsigned char)buf[3];

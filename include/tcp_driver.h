@@ -38,7 +38,7 @@ using boost::asio::ip::tcp;
 
 namespace mysql { namespace system {
 
-class Binlog_tcp_driver : public Binary_log_driver
+class Binlog_tcp_driver : public Binary_log_driver //实际的mysql方式
 {
 public:
 

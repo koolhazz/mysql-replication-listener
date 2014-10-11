@@ -34,14 +34,14 @@ namespace system {
 */
 struct st_handshake_package
 {
-  boost::uint8_t     protocol_version;
-  std::string server_version_str;
-  boost::uint32_t    thread_id;
-  boost::uint8_t     scramble_buff[8];
-  boost::uint16_t    server_capabilities;
-  boost::uint8_t     server_language;
-  boost::uint16_t    server_status;
-  boost::uint8_t     scramble_buff2[13];
+  boost::uint8_t     	protocol_version;
+  std::string 			server_version_str;
+  boost::uint32_t    	thread_id;
+  boost::uint8_t     	scramble_buff[8];
+  boost::uint16_t    	server_capabilities;
+  boost::uint8_t     	server_language;
+  boost::uint16_t    	server_status;
+  boost::uint8_t     	scramble_buff2[13];
 };
 
 /**
@@ -50,12 +50,12 @@ struct st_handshake_package
 */
 struct st_ok_package
 {
-  boost::uint8_t  result_type;
-  boost::uint64_t affected_rows;
-  boost::uint64_t insert_id;
-  boost::uint16_t server_status;
-  boost::uint16_t warning_count;
-  std::string  message;
+  boost::uint8_t  	result_type;
+  boost::uint64_t 	affected_rows;
+  boost::uint64_t 	insert_id;
+  boost::uint16_t 	server_status;
+  boost::uint16_t 	warning_count;
+  std::string  		message;
 };
 
 struct st_eof_package
